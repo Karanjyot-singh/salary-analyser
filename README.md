@@ -1,2 +1,2 @@
 # salary-analyser
-THe salary analyser i s a group project created by me and my fellow classmate
+THe salary analyser is a group project created by my fellow classmate and me
