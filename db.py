@@ -93,8 +93,14 @@ def get_salaries(department=None):
 
 
 def delete_employee(employee_id):
-   def update_employee(employee_id, name, department, role, salary):
-    """Update an employee. Returns True if updated."""
+    """Delete by id. Returns True if a row was deleted."""
+    with closing(_connect()) as conn, conn:
+        cur = conn.execute("DELETE FROM employees WHERE id = ?", (employee_id,))
+        return cur.rowcount > 0
+
+
+def update_employee(employee_id, name, department, role, salary):
+    # ...her existing update code, unindented to the left margin...
 
     if not str(name).strip():
         raise ValueError("Name cannot be empty.")
